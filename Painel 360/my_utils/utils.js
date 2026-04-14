@@ -31,3 +31,31 @@ const Utils = {
     return months.slice(0, count);
   }
 };
+
+const headerMap = {
+  str_programa: "Programa",
+  str_ns: "NS",
+  str_elemento_pp: "Elemento PP",
+  str_ordem: "Ordem",
+  str_tipo_ordem: "Tipo de Ordem",
+  str_status_sap: "Status SAP",
+  str_planejador_mrp: "Planejador MRP",
+
+  str_nome: "Nome",
+  str_pn: "Part Number",
+  str_cemb: "CEMB",
+  str_descricao: "Descrição",
+
+  num_qtd_falt_pgto: "Qtd. Falta Pgto",
+  num_qtd_stk_gpx: "Estoque GPX",
+  num_qtd_stk_bot: "Estoque BOT",
+  num_qtd_stk_eug: "Estoque EUG",
+  num_qtd_stk_sjk: "Estoque SJK",
+  num_qtd_stk_tte: "Estoque TTE",
+  num_qtd_stk_vcp: "Estoque VCP",
+
+  possui_stk_pep: "Possui Estoque PEP",
+  flag_lid: "LID",
+  data_pagamento_programado: "Data Pgto Programado",
+  data_inicio: "Data Início"
+};
