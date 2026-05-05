@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Streaming Insights</title>
+        <link rel="icon" type="image/png" href="../assets/img/1301944.svg"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/styles.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search"/>
+        <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <header class="header-hero-img">
+
+            <!-- BOTÃO MENU -->
+            <div id="mobile-menu"
+                class="mobile-menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+                role="button"
+                tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <!-- TÍTULO -->
+
+            <div class="titulo">
+                <h1>Streaming Insights</h1>
+            </div>
+
+            <!-- ESPAÇADOR PARA EQUILIBRAR O HEADER -->
+            <div class="header-spacer" aria-hidden="true"></div> 
+        </header>
+
+        <!-- Menu lateral (fora do header — position: fixed próprio) -->
+        <nav id="menu" role="navigation" aria-label="Menu principal">
+            <ul>
+                <li><a href="/">Mais ouvidas do mês</a></li>
+                <li><a href="/">Mais ouvidas do ano</a></li>
+                <li><a href="/">Top 5</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="busca">
+                <form action="/buscar" method="get">
+                    <input type="search" name="busca" placeholder="Pesquisar" aria-label="Pesquisar" maxlength="180">
+                    <button type="submit">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="grafico-faltas">
+                <div class="grafico-container">
+                    <h2>Mais ouvidas do mês</h2>
+                    <div id="graficoEfetivas"></div>
+                </div>
+            </div>
+
+            <div class="grafico-faltas">
+                <div class="grafico-container">
+                    <h2>Mais ouvidas do ano</h2>
+                    <div id="graficoFaltasNS"></div>
+                </div>
+            </div>
+
+            <div class="conteudo-graficos">
+                <div class="grafico-container">
+                    <h2>Top 10 da semana</h2>
+                    <div id="graficoTopEfetivas"></div>
+                </div>
+
+                <div class="grafico-container">
+                    <h2>Top 5</h2>
+                    <div id="graficoEfetivasPorTecnologia"></div>
+                </div>
+
+                <div class="grafico-container">
+                    <h2>Gráfico setor</h2>
+                    <div id="graficoSetor"></div>
+                </div>
+
+                <div class="grafico-container">
+                    <h2>Gráfico Polar</h2>
+                    <div id="graficoPolar"></div>
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- Libs -->
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+
+        <!-- JS -->
+        <script type="module" src="/painel_360/frontend/js/main.js"></script>
+
+    </body>
+</html>

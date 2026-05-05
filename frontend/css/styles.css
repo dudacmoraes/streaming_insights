@@ -1,0 +1,301 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte do site */
+    background: url("https://omicaelense.com.br/wp-content/uploads/2022/09/happy-people-dance-nightclub-party-concert_31965-13481.jpg") no-repeat center center; /* Define a imagem de fundo do site */
+    background-size: cover; /* Faz com que a imagem cubra todo o espaço */
+    color: #fff; /* Define a cor do texto do body */
+}
+
+@media (min-width: 768px) { body { background-attachment: fixed; }} /* Em telas com largura mínima de 768px, o fundo fica fixo enquanto a página rola */
+
+a {
+    color: #fff; /* Cor dos links */
+    text-decoration: none; /* Remove a linha abaixo dos links */
+}
+
+a:hover { opacity: 0.7; } /* Cria uma sombra ao passar o mouse por cima do link */
+
+/* ─────────────────────────  HEADER ──────────────────────────── */
+.header-hero-img {
+    background: #000; /* Define a cor do header */
+    position: fixed; /* Fixa o fundo na tela fazendo ele não se mover com a rolagem da página */
+    top: 0; /* Remove o espaço no topo da tela */
+    left: 0; /* Remove o espaço à esquerda */
+    width: 100%; /* Define a largura como 100% da tela */
+    height: 80px; /* Altura */
+    display: flex; /* Organiza os elementos dentro do header */
+    align-items: center; /* Alinha a logo verticalmente ao centro do header */
+    gap: 15px; /* Espaço entre os itens (Menu, logo embraer e logo painel) */
+    padding: 0 25px; /* Espaço para o botão do menu */
+    /*color: #fff; */
+    z-index: 1; /* Faz o header cobrir os itens do menu */
+}
+
+/* ─────────────────────────  BOTÃO MENU ──────────────────────────── */
+.mobile-menu {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mobile-menu .line1, .mobile-menu .line2, .mobile-menu .line3 {
+    width: 30px; /* Cria espaço para o botão do menu */
+    height: 2px;
+    background: #fff; /* Define a cor do botão */
+    margin: 4px 0; /* Alinha as linhas criando o botão */
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body.menu-aberto .mobile-menu .line1 { transform: translateY(10px) rotate(45deg); } /* Faz a linha 1 do botão se mover */
+body.menu-aberto .mobile-menu .line2 { opacity: 0; transform: scaleX(0); } /* Faz a linha 2 do menu sumir */
+body.menu-aberto .mobile-menu .line3 { transform: translateY(-10px) rotate(-45deg); } /* Faz a linha 3 se mover na direção oposta da linha 1, formando um X */
+
+/* ─────────────────────────  LOGO ──────────────────────────── */
+.logo {
+    height: 50px; /* Define o tamanho da logo */
+    width: auto;
+    display: block;
+    flex-shrink: 0; /* A logo não pode encolher se faltar espaço no navegador */
+}
+
+/* ─────────────────────────  TÍTULO ──────────────────────────── */
+.titulo {
+    flex: 1; /* Faz o container do título ocupar todo o espaço no eixo horizontal (sem ele, o text align abaixo não funciona) */
+    text-align: center; /* Centraliza o título */
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 30px; /* Tamanho do título */
+    font-weight: 600; /* Espessura da fonte */
+    text-transform: uppercase; /* Deixa o título maiúsculo */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    white-space: nowrap; /* Impede a quebra de linhas */
+}
+
+/* ─── ESPAÇADOR ─── */
+.header-spacer {
+    width: 100px; /* Cria um espaço à direita para preencher o header e não alterar o alinhamento dos elementos */
+    flex-shrink: 0; /* Não pode encolher se faltar espaço no navegador */
+}
+
+/* ───────────────────────── MENU LATERAL ──────────────────────────── */
+/* O #menu é um <nav> — os estilos de layout vão nele, e os estilos de lista vão no <ul> interno */
+#menu {
+    background: rgba(0, 0, 0, .90);
+    position: fixed;
+    top: 80px; /* Começa após o header */
+    left: 0;
+    z-index: 99;
+    width: 15vw; /* Define a largura do menu */
+    min-width: 200px;
+    height: calc(100vh - 80px); /* Define a altura (100 - 80 do header) */
+    transform: translateX(-100%); /* Empurra para fora da tela para abrir com o JavaScript */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+#menu.open { transform: translateX(0); }
+
+#menu ul {
+    list-style: none; /* Remove as bolinhas do ul (que vem por padrão) */
+    margin: 0; /* Remove as margens padrão do ul */
+    padding: 20px 0; /* Adiciona espaço acima do menu e remove o espaço da margem direita */
+    display: flex; /* Alinha no eixo horizontal */
+    flex-direction: column; /* Direciona os elementos em coluna */
+    gap: 5px; /* Espaçamento entre os itens do menu (li) */
+}
+
+#menu li {
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    display: block; /* Cria um bloco no link, para facilitar o clique */
+    padding: 10px 20px; /* Adiciona espaçamento apenas nos elementos do menu */
+    border-radius: 5px; /* Arreddonda levemente as bordas do bloco do link */
+    opacity: 0; /* Oculta o link quando o menu está fechado */
+    visibility: hidden; /* Torna não clicável quando o menu está fechado */
+    transition: opacity .25s ease, background-color .2s ease; /* Cria uma leve transição ao passar o mouse por cima dos blocos */
+    font-size: 20px; /* Tamanho da fonte dos links */
+    font-weight: 500; /* Espessura da fonte */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    text-transform: uppercase; /* Transforma em letras maiúsculas */
+}
+
+#menu.open a {
+    opacity: 1; /* Links ficam visívels */
+    visibility: visible; /* Links ficam clicáveis */
+}
+
+#menu a:hover {
+    background-color: rgba(255, 255, 255, .1); /* Mostra a transição do block ao passar o mouse */
+}
+
+/* ─── Variável de largura do menu ─── */
+:root { --menu-width: 15vw; } /* Define a variável global de largura como 15% da tela */
+
+@media (max-width: 1300px) { /* Quando a tela for menor ou igual a 1300px de largura */
+    #menu { width: 250px; } /* Troca a largura responsiva (vw) por largura fixa (px) para evitar que o menu fique estreito demais */
+    :root { --menu-width: 250px; } /* Define a variável global de 15vw para 250px */
+}
+
+@media (max-width: 900px) { /* Quando a tela for menor ou igual a 900px de largura */
+    #menu { width: 200px; }
+    :root { --menu-width: 200px; }
+}
+
+/* ───────────────────────── MAIN ──────────────────────────── */
+main {
+    min-height: 100vh; /* Garante que o main tenha no mínimo a altura da tela inteira */
+    padding-top: calc(80px + 32px); /* 80px = altura do header + 32px = espaço de respiro para o início do conteúdo na página */
+    padding-bottom: 40px; /* Evita que o último elemento grude no fim da página */
+    padding-left: 40px; /* Evita que o conteúdo grude à esquerda */ 
+    padding-right: 40px; /* Evita que o conteúdo grude à direita */
+    transition: padding-left 0.3s ease-in-out; /* Faz com que o conteúdo deslize ao abrir o menu */
+}
+
+body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteúdo desliza para a direita quando abre o menu */ }
+
+/* ───────────────────────── BARRA DE BUSCA ──────────────────────────── */
+.busca {
+    background-color: rgba(0, 0, 0, .8); /* Dá cor à barra de busca */
+    margin-bottom: 40px; /* Cria espaço entre a barra de busca e o primeiro container */
+    width: 100%; /* Largura do container de busca */
+    height: 60px; /* Altura do container de busca */
+    border-radius: 10px; /* Bordas levemente arredondadas */
+    display: flex; /* Faz com que o form seja organizado em linha dentro do container */
+    align-items: center; /* Alinha a barra de busca ao centro verticalmente */
+}
+
+.busca form {
+    display: flex; /* Alinha os itens lado a lado e faz com que não quebrem linha */
+    align-items: center; /* Centraliza verticalmente o input e o botão */
+    width: 100%; /* O form ocupa toda a largura do container de busca */
+    height: 100%; /* O form ocupa toda a altura do container */
+    padding: 0 16px; /* Evita que o input e o botão encostem nas bordas do container */
+}
+
+.busca input {
+    flex: 1; /* Faz o input ocupar todo o container */
+    height: 40px; /* Altura do input */
+    background-color: transparent; /* Remove o fundo branco padrão do input */
+    border: none; /* Remove a borda padrão do input */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6); /* Cria uma borda inferior */
+    color: #ffffff; /* Cor do texto digitado */
+    font-size: 16px; /* Tamanho da fonte da caixa de pesquisa */
+    outline: none; /* Remove o contorno do tab e selação */
+    padding-right: 10px; /* Espaço entre a borda e o botão */
+    transition: border-color 0.2s ease; /* Transição de cor da borda inferior */
+}
+
+.busca input:focus {
+    border-bottom-color: #fff; /* Cor para a borda inferior */
+}
+
+.busca input::placeholder { color: rgba(255, 255, 255, 0.5); } /* Cor do "Pesquisa" */
+
+.busca button {
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove as bordas do botão */
+    cursor: pointer; /* Faz o mouse mudar o ícone */
+    margin-left: 10px; /* Espaço entre o botão e a borda */
+    display: flex; /* Permite que align-items e justify-content funcionem */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+.material-symbols-outlined {
+    font-size: 20px; /* Tamanho do ícone */
+    color: #fff; /* Cor do botão */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Transição suave ao passar o mouse em cima */
+}
+
+.busca button:hover .material-symbols-outlined {
+    opacity: 0.5; /* Mudança no estilo do botão ao passar o mouse em cima */
+    transform: scale(1.1); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
+/* ───────────────────────── BLOCO E CONTAINER GRÁFICO DE FALTAS ──────────────────────────── */
+.grafico-faltas {
+    background-color: rgba(0, 0, 0, .8); /* Cor do fundo do bloco */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 100%; /* Largura do bloco */
+    height: 50vh; /* Altura do bloco */
+    padding: 20px; /* Espaço entre o bloco e o container */
+    margin-bottom: 30px; /* Espaço entre um bloco e outro */
+}
+
+.grafico-faltas .grafico-container {
+    height: 100%; /* Ocupa todo o bloco */
+    background: white; /* Cor do fundo do container */
+    padding: 20px; /* Espaço entre o container e o conteúdo */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+.grafico-faltas .grafico-container h2 {
+    color: black; /* Cor do texto */
+}
+
+@media (max-width: 1300px) { .grafico-faltas { height: 450px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 450px */
+
+/* ───────────────────────── GRID DE GRÁFICOS ──────────────────────────── */
+.conteudo-graficos {
+    background-color: rgba(0, 0, 0, .8); /* Cor do bloco */
+    border-radius: 10px; /* Borda arredondada */
+    display: grid; /* Necessário para fazer o grid-template-columns funcionar */
+    grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Organiza em colunas */
+    gap: 30px; /* Espaço entre um container e outro */
+    padding: 20px; /* Espaço entre a borda do bloco e do container */
+}
+
+.grafico-container {
+    background-color: #fff; /* Cor do container */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaço entre o container e o conteúdo */
+    height: 100%; /* Altura do container */
+    display: flex; /* Necessário para funcionar o flex-shrink */
+    flex-direction: column; /* Necessário para alinhar o conteúdo */
+    opacity: 0; /* Faz o gráfico desaparecer para a animação fade in funcionar */
+    transform: translateY(25px); /* Desce o gráfico 25px para ajudar no efeito fade in */
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.grafico-container h2 {
+    color: black; /* Cor da fonte */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 600; /* Espessura da fonte */
+    text-transform: uppercase; /* Texto em maiúsculo */
+    margin: 0; /* Remove as margens do título */
+    margin-bottom: 12px; /* Espaço entre o título e o conteúdo do container */
+    letter-spacing: 0.5px; /* Espaçamento entre as letras */
+    flex-shrink: 0; /* O elemento não pode encolher se faltar espaço */
+}
+
+.grafico-container div {
+    flex: 1;
+    min-height: 0; /* Permite que o div encolha dentro do flex */
+}
+
+.grafico-container.animate { animation: fadeSlideIn 0.5s ease forwards; } /* Anima a entrada com fade in */
+
+@media (max-width: 1300px) { .grafico-container { height: 350px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 350px */
+
+@media (max-width: 700px) { .conteudo-graficos { grid-template-columns: 1fr; } } /* Quando a tela for menor ou igual a 700px, a organização dos gráficos fica 1 por linha */

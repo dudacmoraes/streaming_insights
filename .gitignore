@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+package-lock.json
+
+# Dados temporários
+*.csv.bak
+
+# Assets antigos
+assets/
+Painel 360/
+HTML/
+my_utils/
