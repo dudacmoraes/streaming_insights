@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Painel 360°</title>
-    <link rel="icon" type="image/png" href="/painel_360/assets/img/EMB_Symbol_white-RGB_1.png">
+    <title>Login - Streaming Insights</title>
+    <link rel="icon" type="image/png" href="../img/1301944.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: url("/painel_360/assets/img/p500e_exterior-4.jpg") no-repeat center center fixed;
             background-size: cover;
             color: #ffffff;
             overflow: hidden;
@@ -65,7 +64,7 @@
         }
 
         /* Logo */
-        .logo-embraer {
+        .logo {
             width: 220px;
             margin-bottom: 24px; /* centraliza a logo e dá espaço inferior */
         }
@@ -249,10 +248,10 @@
 
     <main>
         <div class="login-container">
-            <img class="logo-embraer" src="/painel_360/assets/img/EMB_Logo_white_RGB_1.png" alt="Logo Embraer Branca"/>
-            <h1>Painel 360°</h1>
+            <!--<img class="logo" src="../assets/img/1301944.svg" alt="Logo"/> -->
+            <h1>Streaming Insights</h1>
 
-            <form action="/Painel 360/HTML/index.html" method="post" onsubmit="startAnimation(event)">
+            <form action="./index.html" method="post" onsubmit="startAnimation(event)">
                 <input
                     type="text"
                     id="username"
@@ -293,16 +292,18 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.halo.min.js"></script>
 
     <script>
-        VANTA.CLOUDS({
+        VANTA.HALO({
             el: "#vanta-bg",
-            mouseControls: false,
+            mouseControls: true,
             touchControls: false,
             gyroControls: false,
             minHeight: 200.00,
-            minWidth: 200.00
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1
         })
     </script>
 
