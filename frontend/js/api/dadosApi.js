@@ -1,7 +1,10 @@
 // ================== API ==================
 export async function obterDadosDashboard() {
-  const [grafico] = await Promise.all([
-    fetch ("http://127.0.0.1:8000/dados/grafico").then(resposta => resposta.json())
-  ]);
-  return { grafico };
+  const resposta = await fetch("http://127.0.0.1:8000/top-musicas");
+
+  if (!resposta.ok) {
+    throw new Error("Erro na API");
+  }
+  
+  return resposta.json();
 }
