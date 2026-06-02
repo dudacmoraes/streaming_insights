@@ -24,12 +24,21 @@ def reader_csv():
     # Abre o arquivo csv em modo leitura
     # encoding = 'utf-8' garante leitura correta de caracteres especiais
     # newline = '' evita problemas de quebra de linha entre sistemas operacionais
-    with open(CSV_PATH, encoding = 'utf-8', newline = '') as csvfile:
+    with open(CSV_PATH, encoding = 'utf-8-sig', newline = '') as file:
         # Cria um leitor csv que converte cada linha em um dicionário
-        reader = csv.DictReader(csvfile)
+        reader = csv.DictReader(file, delimiter = ';')
         
         # Percorre cada linha do csv
-        for linha in reader:
+        for line in reader:
             # Retorna cada linha individualmente como um dicionário
             # O uso de yield transforma esta função em um generator
-            yield linha
+            yield line
+
+# TESTE
+if __name__ == "__main__":
+    print("Path file:", CSV_PATH)
+    for count, line in enumerate(reader_csv(), start = 1):
+        print(f'Line {count}: {line}')
+        
+        if count == 5:
+            break
