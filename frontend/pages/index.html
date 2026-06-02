@@ -44,7 +44,10 @@
             <ul>
                 <li><a href="/">Mais ouvidas do mês</a></li>
                 <li><a href="/">Mais ouvidas do ano</a></li>
+                <li><a href="/">Top 10 da semana</a></li>
                 <li><a href="/">Top 5</a></li>
+                <li><a href="/">...</a></li>
+                <li><a href="/">...</a></li>
             </ul>
         </nav>
 
@@ -61,26 +64,26 @@
             <div class="grafico-faltas">
                 <div class="grafico-container">
                     <h2>Mais ouvidas do mês</h2>
-                    <div id="graficoEfetivas"></div>
+                    <div id="mostListenedMonth"></div>
                 </div>
             </div>
 
             <div class="grafico-faltas">
                 <div class="grafico-container">
                     <h2>Mais ouvidas do ano</h2>
-                    <div id="graficoFaltasNS"></div>
+                    <div id="mostListenedYear"></div>
                 </div>
             </div>
 
             <div class="conteudo-graficos">
                 <div class="grafico-container">
                     <h2>Top 10 da semana</h2>
-                    <div id="graficoTopEfetivas"></div>
+                    <div id="topTenWeek"></div>
                 </div>
 
                 <div class="grafico-container">
                     <h2>Top 5</h2>
-                    <div id="graficoEfetivasPorTecnologia"></div>
+                    <div id="topFive"></div>
                 </div>
 
                 <div class="grafico-container">
@@ -97,11 +100,11 @@
         </main>
         
         <!-- Libs -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
-
+        
         <!-- JS -->
-        <script type="module" src="/painel_360/frontend/js/main.js"></script>
+        <script type="module" src="/streaming_insights/frontend/js/main.js"></script>
 
     </body>
 </html>
