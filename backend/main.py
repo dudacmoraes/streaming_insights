@@ -4,12 +4,13 @@ from app.routes import router
 
 app = FastAPI(title = "Streaming Insights")
 
-# CORS -> Permite o frontend acessar
+# Middleware de CORS -> permite que o frontend acesse a API durante o desenvolvimento
 app.add_middleware(
     CORSMiddleware,
     allow_origins = ['*'], #restringir em produção
+    allow_credentials = True,
     allow_methods = ['*'],
     allow_headers = ['*'],
 )
 
-app.include_router(router)
+app.include_router(router) # Registra as rotas da aplicação
