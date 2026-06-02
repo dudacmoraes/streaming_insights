@@ -1,19 +1,48 @@
-﻿data;musica;artista;album;genero
-01/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie
-02/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie
-05/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie
-01/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative
-03/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative
-04/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative
-02/03/2026;Golden Brown;The Stranglers;La Folie;Rock
-05/03/2026;Golden Brown;The Stranglers;La Folie;Rock
-06/03/2026;Golden Brown;The Stranglers;La Folie;Rock
-07/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal
-08/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal
-10/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal
-08/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk
-11/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk
-12/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk
-15/03/2026;Youngest Daughter;Superheaven;Jar;Alternative
-18/03/2026;Youngest Daughter;Superheaven;Jar;Alternative
-20/03/2026;Youngest Daughter;Superheaven;Jar;Alternative
+played_at;track_name;artist_name;album_name;genre;release_year
+01/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+02/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+03/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+04/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+05/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+06/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+05/03/2026;Lotta Good;Slow Coast;Lotta Good;Indie;2025
+01/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative;2026
+02/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative;2026
+03/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative;2026
+03/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative;2026
+04/03/2026;Freakin’ Out;Dexter And The Moonrocks;Freakin' Out;Alternative;2026
+02/03/2026;Golden Brown;The Stranglers;La Folie;Rock;1981
+05/03/2026;Golden Brown;The Stranglers;La Folie;Rock;1981
+06/03/2026;Golden Brown;The Stranglers;La Folie;Rock;1981
+06/03/2026;Golden Brown;The Stranglers;La Folie;Rock;1981
+07/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+08/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+09/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+10/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+11/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+12/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+13/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+10/03/2026;Symphony Of Destruction;Megadeth;Countdown To Extinction;Metal;1992
+08/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk;2025
+11/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk;2025
+12/03/2026;MONTAGEM COMA - Super Slowed;ANDROMEDA;MONTAGEM COMA;Phonk;2025
+15/03/2026;Youngest Daughter;Superheaven;Jar;Alternative;2013
+18/03/2026;Youngest Daughter;Superheaven;Jar;Alternative;2013
+20/03/2026;Youngest Daughter;Superheaven;Jar;Alternative;2013
+20/03/2026;The Hell Song;Sum 41;Does This Look Infected?;Punk;2002
+21/03/2026;The Hell Song;Sum 41;Does This Look Infected?;Punk;2002
+23/03/2026;The Hell Song;Sum 41;Does This Look Infected?;Punk;2002
+24/03/2026;The Hell Song;Sum 42;Does This Look Infected?;Punk;2002
+25/03/2026;The Hell Song;Sum 43;Does This Look Infected?;Punk;2002
+23/03/2026;EL CONTROL;M4GN;EL CONTROL;Phonk;2025
+24/03/2026;EL CONTROL;M4GN;EL CONTROL;Phonk;2025
+24/03/2026;EL CONTROL;M4GN;EL CONTROL;Phonk;2025
+25/03/2026;EL CONTROL;M4GN;EL CONTROL;Phonk;2025
+26/06/2026;EL CONTROL;M4GN;EL CONTROL;Phonk;2025
+27/03/2026;Carry On My Wayward Son;Kansas;Leftoverture;Rock;1976
+29/03/2026;Carry On My Wayward Son;Kansas;Leftoverture;Rock;1976
+30/03/2026;Carry On My Wayward Son;Kansas;Leftoverture;Rock;1976
+30/03/2026;Carry On My Wayward Son;Kansas;Leftoverture;Rock;1976
+31/03/2026;Otherside;Red Hot Chili Peppers;Californication;Rock;1999
+01/04/2026;Otherside;Red Hot Chili Peppers;Californication;Rock;1999
+04/04/2026;Otherside;Red Hot Chili Peppers;Californication;Rock;1999
