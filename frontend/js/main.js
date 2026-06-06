@@ -1,24 +1,27 @@
+// BACKGROUND
+import { inicializarBackgroundAnimado } from "./ui/background.js";
+
 //MENU E ANIMAÇÕES
 import { inicializarMenu, animarContainers, inicializarBusca } from "./ui/script.js";
 
 //API
 import { obterDadosDashboard } from "./api/dadosApi.js";
-// Importa os transformadores
-import { transformarGraficoFaltas, transformarFaltasEfetivas, transformarTopEfetivas } from "./charts/transformadores.js";
+
 // Importa os gráficos
-import { criarGraficoFaltas, criarGraficoFaltasEfetivas, criarGraficoTopEfetivas } from "./charts/charts.js";
-// Importa a tabela
-import { criarTabela } from "./charts/grid.js";
+import { criarGraficoMes } from "./components/charts.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  inicializarMenu();
-  animarContainers();
-  inicializarBusca();
+  try {
+    inicializarBackgroundAnimado();
+    inicializarMenu();
+    animarContainers();
+    inicializarBusca();
 
-  const { tabela, grafico } = await obterDadosDashboard();
+    const dados = await obterDadosDashboard();
+    console.log("Dados recebidos no main:", dados);
 
-  criarTabela(tabela);
-  criarGraficoFaltasEfetivas(transformarFaltasEfetivas(tabela));
-  criarGraficoFaltas(transformarGraficoFaltas(grafico));
-  criarGraficoTopEfetivas(transformarTopEfetivas(grafico, 10));
+    criarGraficoMes(dados);
+  } catch (erro) {
+    console.error("Erro ao iniciar o dashboard:", erro);
+  }
 });
