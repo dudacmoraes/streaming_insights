@@ -29,7 +29,7 @@ export function inicializarMenu() {
 
 // ================== ANIMAÇÃO DOS CONTAINERS ==================
 export function animarContainers() {
-  const graficoContainer = document.querySelectorAll(".grafico-container"); // Seleciona todos os elementos com a classe "gráfico-container"
+  const graficoContainer = document.querySelectorAll(".white-container"); // Seleciona todos os elementos com a classe "gráfico-container"
   graficoContainer.forEach((graficoContainer, i) => { // Percorre cada container encontrado
     setTimeout(() => graficoContainer.classList.add("animate"), i * 180); // Aplica a animação em efeito cascata
   });
@@ -39,7 +39,7 @@ export function animarContainers() {
 export function inicializarBusca () {
   const formBusca = document.querySelector(".busca form"); // Seleciona o formulário da barra de busca
   const inputBusca = formBusca?.querySelector("input"); // Seleciona o campo de input dentro do formulário de busca
-  const graficoContainer = document.querySelectorAll(".grafico-container"); // Seleciona todos os containers de gráficos da página
+  const graficoContainer = document.querySelectorAll(".white-container"); // Seleciona todos os containers de gráficos da página
   
   if (!formBusca || !inputBusca) return; // Garante que o formulário e o input existam antes de rodar o código
   formBusca.addEventListener("submit", (e) => {
