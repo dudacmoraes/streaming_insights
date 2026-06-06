@@ -10,9 +10,8 @@ html, body {
 
 body {
     font-family: 'Roboto', sans-serif; /* Fonte do site */
-    background: url("https://omicaelense.com.br/wp-content/uploads/2022/09/happy-people-dance-nightclub-party-concert_31965-13481.jpg") no-repeat center center; /* Define a imagem de fundo do site */
-    background-size: cover; /* Faz com que a imagem cubra todo o espaço */
-    color: #fff; /* Define a cor do texto do body */
+    background: white;
+    color: white; /* Define a cor do texto do body */
 }
 
 @media (min-width: 768px) { body { background-attachment: fixed; }} /* Em telas com largura mínima de 768px, o fundo fica fixo enquanto a página rola */
@@ -34,7 +33,7 @@ a:hover { opacity: 0.7; } /* Cria uma sombra ao passar o mouse por cima do link 
     height: 80px; /* Altura */
     display: flex; /* Organiza os elementos dentro do header */
     align-items: center; /* Alinha a logo verticalmente ao centro do header */
-    gap: 15px; /* Espaço entre os itens (Menu, logo embraer e logo painel) */
+    gap: 15px; /* Espaço entre os itens (Menu, logo e logo painel) */
     padding: 0 25px; /* Espaço para o botão do menu */
     /*color: #fff; */
     z-index: 1; /* Faz o header cobrir os itens do menu */
@@ -68,6 +67,15 @@ body.menu-aberto .mobile-menu .line3 { transform: translateY(-10px) rotate(-45de
     width: auto;
     display: block;
     flex-shrink: 0; /* A logo não pode encolher se faltar espaço no navegador */
+}
+
+/* ─────────────────────────  BACKGROUND ──────────────────────────── */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* ─────────────────────────  TÍTULO ──────────────────────────── */
@@ -229,8 +237,8 @@ body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteú
     transform: scale(1.1); /* Aumenta levemente o tamanho do botão ao passar o mouse */
 }
 
-/* ───────────────────────── BLOCO E CONTAINER GRÁFICO DE FALTAS ──────────────────────────── */
-.grafico-faltas {
+/* ───────────────────────── BLOCO E CONTAINER DE GRÁFICOS ──────────────────────────── */
+.dark-container {
     background-color: rgba(0, 0, 0, .8); /* Cor do fundo do bloco */
     border-radius: 10px; /* Bordas arredondadas */
     width: 100%; /* Largura do bloco */
@@ -239,21 +247,21 @@ body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteú
     margin-bottom: 30px; /* Espaço entre um bloco e outro */
 }
 
-.grafico-faltas .grafico-container {
+.dark-container .white-container {
     height: 100%; /* Ocupa todo o bloco */
     background: white; /* Cor do fundo do container */
     padding: 20px; /* Espaço entre o container e o conteúdo */
     border-radius: 10px; /* Borda arredondada */
 }
 
-.grafico-faltas .grafico-container h2 {
+.dark-container .white-container h2 {
     color: black; /* Cor do texto */
 }
 
-@media (max-width: 1300px) { .grafico-faltas { height: 450px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 450px */
+@media (max-width: 1300px) { .dark-container { height: 450px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 450px */
 
 /* ───────────────────────── GRID DE GRÁFICOS ──────────────────────────── */
-.conteudo-graficos {
+.grid-container {
     background-color: rgba(0, 0, 0, .8); /* Cor do bloco */
     border-radius: 10px; /* Borda arredondada */
     display: grid; /* Necessário para fazer o grid-template-columns funcionar */
@@ -262,7 +270,7 @@ body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteú
     padding: 20px; /* Espaço entre a borda do bloco e do container */
 }
 
-.grafico-container {
+.white-container {
     background-color: #fff; /* Cor do container */
     border-radius: 10px; /* Bordas arredondadas */
     padding: 20px; /* Espaço entre o container e o conteúdo */
@@ -278,7 +286,7 @@ body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteú
     to { opacity: 1; transform: translateY(0); }
 }
 
-.grafico-container h2 {
+.white-container h2 {
     color: black; /* Cor da fonte */
     font-size: 20px; /* Tamanho da fonte */
     font-weight: 600; /* Espessura da fonte */
@@ -289,13 +297,13 @@ body.menu-aberto main { padding-left: calc(var(--menu-width) + 40px); /* Conteú
     flex-shrink: 0; /* O elemento não pode encolher se faltar espaço */
 }
 
-.grafico-container div {
+.white-container div {
     flex: 1;
     min-height: 0; /* Permite que o div encolha dentro do flex */
 }
 
-.grafico-container.animate { animation: fadeSlideIn 0.5s ease forwards; } /* Anima a entrada com fade in */
+.white-container.animate { animation: fadeSlideIn 0.5s ease forwards; } /* Anima a entrada com fade in */
 
-@media (max-width: 1300px) { .grafico-container { height: 350px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 350px */
+@media (max-width: 1300px) { .white-container { height: 350px; } } /* Quando a tela for menor ou igual a 1300px, a altura do container dos gráficos será 350px */
 
-@media (max-width: 700px) { .conteudo-graficos { grid-template-columns: 1fr; } } /* Quando a tela for menor ou igual a 700px, a organização dos gráficos fica 1 por linha */
+@media (max-width: 700px) { .grid-container { grid-template-columns: 1fr; } } /* Quando a tela for menor ou igual a 700px, a organização dos gráficos fica 1 por linha */
