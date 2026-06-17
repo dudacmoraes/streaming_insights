@@ -1,5 +1,3 @@
-import { Utils } from "./utils.js";
-
 // ================== GRÁFICOS ====================
 // -- Gráfico de linhas --
 export function criarGraficoMes(dados) { //Objeto para contar quantas ocorrências efetivas existem
@@ -26,44 +24,57 @@ export function criarGraficoMes(dados) { //Objeto para contar quantas ocorrênci
       xaxis: { categories: categorias },
       tooltip: { enabled: true, theme: "dark", followCursor: true }
   });
-
-  console.log("Dados recebidos:", dados);
-
   window.chartMes.render();
 }
 
 // -- Gráfico de colunas empilhadas --
-const chartAno = new ApexCharts( // Cria o gráfico de mais ouvidas por ano utilizando ApexCharts
-  document.querySelector("#maisOuvidasAno"), {
-    series: [10, 20, 30, 40, 50],
-    chart: {
-      type: "bar",
-      height: 350, // Altura fixa para não bugar
-      stacked: true,
-      toolbar: { show: false }
-    },
-    plotOptions: {
-      bar: { horizontal: false, borderRadius: 3 } 
-    },
-    dataLabels: { 
-      enabled: true,
-      style: { colors: ['#000'] },
-    },
-    tooltip: {
-      enabled: true,
-      theme: "dark",
-      followCursor: true,
-      title: { formatter: () => '' }
-    },
-    style: { fontSize: '14px' }
+export function criarGraficoAno(dados) {
+
+  if (!Array.isArray(dados)) {
+    console.error("criarGraficoAno esperava um array, mas recebeu:", dados);
+    return;
   }
-)
-chartAno.render();
+
+  const categorias = dados.map(d => d.track_name);
+  const valores = dados.map(d => d.play_count);
+
+  if (window.chartAno) {
+    window.chartAno.destroy();
+  }
+
+  window.chartAno = new ApexCharts( // Cria o gráfico de mais ouvidas por ano utilizando ApexCharts
+    document.querySelector("#maisOuvidasAno"), {
+      series: [{ name: "Mais ouvidas do ano", data: valores }],
+      chart: {
+        type: "bar",
+        height: 350, // Altura fixa para não bugar
+        stacked: true,
+        toolbar: { show: false }
+      },
+      plotOptions: {
+        bar: { horizontal: false, borderRadius: 3 } 
+      },
+      dataLabels: { 
+        enabled: true,
+        style: { colors: ['#000'] },
+      },
+      tooltip: {
+        enabled: true,
+        theme: "dark",
+        followCursor: true,
+        title: { formatter: () => '' }
+      },
+      xaxis: { categories: categorias },
+      style: { fontSize: '14px' }
+    }
+  );
+  window.chartAno.render();
+}
 
 // -- Gráfico de barras horizontais --
 const chartTop10semana = new ApexCharts(
   document.querySelector("#top10semana"), {
-    series: [50, 60, 70, 80],
+    series: [{ data: [50, 60, 70, 80]}],
     chart: { type: "bar", height: "280px", toolbar: { show: false } },
     plotOptions: { bar: { borderRadius: 4, borderRadiusApplication: "end", horizontal: true } },
     dataLabels: { enabled: false },
